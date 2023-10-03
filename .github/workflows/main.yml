@@ -14,14 +14,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build and Deploy
-    - run: echo "Deploying!"
-    - run: npm install --global surge
-    - run: surge ./ --domain 20220018.surge.sh --token 477473f5f3e5f454d5842e13a5221663
-
-      # run: |
-      #   # Configurar Surge.sh
-      #   npm install --global surge
-      #   surge token 477473f5f3e5f454d5842e13a5221663 # Reemplazar <SURGE_API_KEY> con la API Key de Surge de cada estudiante
-
-      #   # Desplegar en Surge.sh
-      #   surge --project ./ --domain 20220018.surge.sh # Reemplazar <SURGE_SUBDOMAIN> con un subdominio único para cada estudiante
+      run: echo "Deploying!"
+    
+    - name: Install Surge
+      run: npm install --global surge
+    
+    - name: Deploy to Surge
+      run: surge ./ --domain 20220018.surge.sh --token 477473f5f3e5f454d5842e13a5221663
