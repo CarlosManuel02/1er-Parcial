@@ -23,4 +23,4 @@ jobs:
       run: surge ./ --domain ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
     
     - name: Visit the website
-      run: curl https://20220018.surge.sh
+      run: curl ${{ secrets.SURGE_DOMAIN }}
